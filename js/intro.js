@@ -1,4 +1,4 @@
-// Textos aleatorios para mostrar debajo de "Bienvenidos"
+// Textos aleatorios
 const frases = [
   "Creamos sitios únicos para tu negocio",
   "Publicidad digital y soporte 24/7",
@@ -10,4 +10,9 @@ const frases = [
 document.addEventListener("DOMContentLoaded", () => {
   const randomText = frases[Math.floor(Math.random() * frases.length)];
   document.querySelector(".random-text").textContent = randomText;
+
+  // Redirigir automáticamente después de 8 segundos
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 8000);
 });

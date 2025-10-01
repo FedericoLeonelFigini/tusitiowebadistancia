@@ -19,12 +19,12 @@ body, html {
   overflow: hidden;
   width: 0;
   animation: typing 3s steps(25, end) forwards, blink 0.7s infinite;
-  margin: 40px auto 0; /* centrado arriba */
+  margin: 40px auto 0;
 }
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 20ch } /* 20 caracteres */
+  to { width: 20ch }
 }
 
 @keyframes blink {
@@ -32,7 +32,7 @@ body, html {
   50% { border-color: #007aff }
 }
 
-/* Logo arriba a la izquierda */
+/* Logo arriba izquierda */
 .logo {
   position: absolute;
   top: 20px;
@@ -40,7 +40,7 @@ body, html {
   max-width: 120px;
   opacity: 0;
   animation: fadeIn 2s ease forwards;
-  animation-delay: 3.5s; /* aparece después del texto */
+  animation-delay: 3.5s;
 }
 
 @keyframes fadeIn {
@@ -48,7 +48,7 @@ body, html {
   to { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 
-/* Bienvenidos + frase */
+/* Bienvenidos + texto random */
 .center-content {
   flex: 1;
   display: flex;
