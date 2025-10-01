@@ -7,8 +7,8 @@
       <a href="./index.html" aria-label="Home" data-nav="home">
         ${iconHome()}<span>Home</span>
       </a>
-      <a href="./arma.html" aria-label="Arma tu sitio" data-nav="arma">
-        ${iconCode()}<span>Arma tu sitio</span>
+      <a href="./arma.html" aria-label="Tienda" data-nav="tienda">
+        ${iconCode()}<span>Tienda</span>
       </a>
       <a href="./paquetes.html" aria-label="Paquetes mayoristas" data-nav="paquetes">
         ${iconBox()}<span>Paquetes</span>
@@ -53,7 +53,7 @@
     } catch { /* noop */ }
   }
 
-   // Iconos SVG
+  // Iconos SVG
   function iconHome() {
     return `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#000" d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3z"/></svg>`;
   }

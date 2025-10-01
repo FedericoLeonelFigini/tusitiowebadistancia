@@ -8,6 +8,9 @@ body, html {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Texto animado */
@@ -19,7 +22,7 @@ body, html {
   overflow: hidden;
   width: 0;
   animation: typing 3s steps(25, end) forwards, blink 0.7s infinite;
-  margin: 40px auto 0; /* centrado arriba */
+  margin-bottom: 20px;
 }
 
 @keyframes typing {
@@ -32,15 +35,12 @@ body, html {
   50% { border-color: #007aff }
 }
 
-/* Logo arriba a la izquierda */
+/* Logo centrado */
 .logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  max-width: 120px;
+  max-width: 220px;
   opacity: 0;
   animation: fadeIn 2s ease forwards;
-  animation-delay: 3.5s; /* aparece después del texto */
+  animation-delay: 3.5s; /* aparece después de la animación del texto */
 }
 
 @keyframes fadeIn {
@@ -49,15 +49,6 @@ body, html {
 }
 
 /* Bienvenidos + frase */
-.center-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
 .subtext {
   font-size: 26px;
   font-weight: 600;

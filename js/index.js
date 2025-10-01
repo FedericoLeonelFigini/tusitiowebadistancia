@@ -1,4 +1,4 @@
-// Textos aleatorios para mostrar debajo de "Bienvenidos"
+// Textos aleatorios
 const frases = [
   "Creamos sitios únicos para tu negocio",
   "Publicidad digital y soporte 24/7",
