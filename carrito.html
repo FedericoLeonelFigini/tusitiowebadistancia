@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Carrito</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./css/footer-nav.css" />
+  <link rel="stylesheet" href="./css/ticket.css" />
+</head>
+<body>
+  <main class="carrito-wrap">
+    <h1>Carrito</h1>
+    <div id="cart-list"></div>
+    <div class="total">Total: $ <span id="cart-total">0</span></div>
+    <div class="actions">
+      <button id="vaciar">Vaciar</button>
+      <button id="descargar">Descargar Ticket</button>
+      <button id="finalizar">Finalizar compra</button>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="./js/cart.js"></script>
+  <script src="./js/footer-nav.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="./js/ticket.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+.paquetes-wrap {
+  max-width: 1200px;
+  margin: 24px auto 90px;
+  padding: 0 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.card-body {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  padding: 16px;
+  width: 100%;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.stars span {
+  font-size: 18px;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+
+.stars span.active {
+  color: #f5b400;
+}
+
+button.add-cart {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  background: #007aff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+button.add-cart:hover {
+  background: #005ecb;
+}

@@ -1,0 +1,77 @@
+/* Barra inferior moderna */
+#footer-nav {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+  z-index: 9999;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+#footer-nav .nav-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+#footer-nav a {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #444;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+#footer-nav a svg {
+  width: 24px; height: 24px;
+  margin-bottom: 4px;
+  transition: transform 0.25s ease, fill 0.25s ease;
+  fill: #444;
+}
+
+#footer-nav span {
+  font-size: 12px;
+  font-weight: 600;
+  display: block;
+}
+
+/* Estado hover */
+@media (hover:hover) {
+  #footer-nav a:hover svg { transform: scale(1.15); fill: #007aff; }
+  #footer-nav a:hover span { color: #007aff; }
+}
+
+/* Estado activo */
+#footer-nav a.active svg,
+#footer-nav a.active span {
+  color: #007aff;
+  fill: #007aff;
+}
+
+/* Badge del carrito */
+#footer-nav .badge {
+  position: absolute;
+  top: 6px; right: 30%;
+  min-width: 18px; height: 18px;
+  background: #ff3b30;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+}
+
+/* Espacio para que no tape contenido */
+body { padding-bottom: 72px; }
+
+/* Ajustes móviles pequeños */
+@media (max-width: 360px) {
+  #footer-nav span { display: none; }
+}
