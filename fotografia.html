@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Fotografía y Publicidad</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./css/footer-nav.css" />
+  <link rel="stylesheet" href="./css/fotografia.css" />
+</head>
+<body>
+  <main>
+    <h1>Fotografía y Publicidad</h1>
+    <section class="productos">
+      <!-- Producto 1 -->
+      <div class="producto-card" data-id="foto1">
+        <img src="./img/logo.png" alt="Imagen IA + Photoshop">
+        <h2>Imagen IA + Photoshop</h2>
+        <p class="precio">$10 USD</p>
+        <div class="stars" data-id="foto1">
+          <span data-star="1">★</span>
+          <span data-star="2">★</span>
+          <span data-star="3">★</span>
+          <span data-star="4">★</span>
+          <span data-star="5">★</span>
+        </div>
+        <button class="add-cart">Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="producto-card" data-id="foto2">
+        <img src="./img/logo.png" alt="Unicamente Photoshop">
+        <h2>Unicamente Photoshop</h2>
+        <p class="precio">$25 USD</p>
+        <div class="stars" data-id="foto2">
+          <span data-star="1">★</span>
+          <span data-star="2">★</span>
+          <span data-star="3">★</span>
+          <span data-star="4">★</span>
+          <span data-star="5">★</span>
+        </div>
+        <button class="add-cart">Agregar al carrito</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="./js/cart.js"></script>
+  <script src="./js/footer-nav.js" defer></script>
+  <script>
+    // sistema de valoración estrellas
+    document.querySelectorAll('.stars span').forEach(starEl => {
+      const parent = starEl.parentElement;
+      const id = parent.dataset.id;
+      const rating = parseInt(localStorage.getItem("rating_" + id) || "0");
+      if (rating > 0) {
+        parent.querySelectorAll("span").forEach(s => {
+          if (parseInt(s.dataset.star) <= rating) s.classList.add("active");
+        });
+      }
+      starEl.addEventListener("click", e => {
+        const stars = parseInt(starEl.dataset.star);
+        localStorage.setItem("rating_" + id, stars);
+        parent.querySelectorAll("span").forEach(s => s.classList.remove("active"));
+        for (let i = 0; i < stars; i++) {
+          parent.querySelectorAll("span")[i].classList.add("active");
+        }
+      });
+    });
+
+    // agregar al carrito
+    document.querySelectorAll(".add-cart").forEach(btn => {
+      btn.addEventListener("click", e => {
+        const card = btn.closest(".producto-card");
+        const id = card.dataset.id;
+        const title = card.querySelector("h2").textContent;
+        const price = parseFloat(card.querySelector(".precio").textContent.replace(/[^0-9.]/g, ""));
+        addToCart({ id, title, price, qty: 1 });
+      });
+    });
+  </script>
+</body>
+</html>

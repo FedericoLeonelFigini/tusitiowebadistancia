@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f9f9f9;
+  padding-bottom: 80px; /* espacio para la barra inferior */
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 28px;
+  color: #007aff;
+}
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.producto-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-6px);
+}
+
+.producto-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.producto-card h2 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.precio {
+  font-size: 20px;
+  font-weight: 700;
+  color: #007aff;
+  margin: 10px 0;
+}
+
+/* estrellas */
+.stars {
+  font-size: 20px;
+  color: #ccc;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+.stars .active {
+  color: gold;
+}
+
+.add-cart {
+  background: #007aff;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 8px;
+  transition: background 0.3s;
+}
+
+.add-cart:hover {
+  background: #005ecb;
+}
