@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0066ff, #0099ff);
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Imagen principal */
+.hero-img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  margin-bottom: 25px;
+}
+
+/* Títulos */
+h1 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+/* Formulario */
+form {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin: 8px 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+button {
+  background: #007aff;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+  background: #005ecb;
+  transform: scale(1.05);
+}
+
+/* Reseñas */
+.reviews {
+  margin-top: 40px;
+}
+
+.review {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.review strong {
+  color: #ffd700;
+  font-size: 18px;
+}
