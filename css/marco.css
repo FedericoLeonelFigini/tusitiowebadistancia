@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* 🎥 Fondo de video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.4) blur(1px);
+}
+
+/* 🔙 Flecha volver */
+.back-arrow {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  background: rgba(0, 191, 255, 0.7);
+  padding: 10px 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: all 0.3s;
+  z-index: 5;
+}
+
+.back-arrow:hover {
+  background: rgba(0, 191, 255, 0.95);
+  transform: scale(1.1);
+}
+
+/* 🧱 Contenedor principal */
+.product-container {
+  max-width: 700px;
+  margin: 120px auto 140px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* 🧾 Título y presentación */
+.product-title {
+  font-size: 2rem;
+  color: #00bfff;
+  margin-bottom: 10px;
+}
+
+.product-intro {
+  font-size: 1.05rem;
+  color: #eee;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* 🎬 Video del producto */
+.video-container video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,191,255,0.4);
+  margin-bottom: 25px;
+  border: 2px solid rgba(0,191,255,0.3);
+}
+
+/* 💰 Precio y botón */
+.buy-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00bfff;
+}
+
+#addCartBtn {
+  background: #00bfff;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+#addCartBtn:hover {
+  background: #0096d6;
+  transform: scale(1.05);
+}
+
+/* ⚙️ Características */
+.features {
+  margin-top: 40px;
+}
+
+#toggleFeatures {
+  background: #00bfff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#toggleFeatures:hover {
+  background: #0096d6;
+}
+
+/* Panel desplegable */
+.features-panel {
+  max-height: 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-top: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: max-height 0.5s ease, padding 0.3s;
+}
+
+.features-panel.active {
+  max-height: 400px;
+  padding: 15px;
+}
+
+.features-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+.features-panel li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  font-size: 0.95rem;
+}
+/* Mejora de animación del panel */
+.features-panel {
+  will-change: max-height, padding;
+}
+
+/* Cuando está abierto, damos padding (el alto se maneja por JS) */
+.features-panel.open {
+  padding: 15px;
+}
