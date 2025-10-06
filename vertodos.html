@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ver todos los productos | Tu sitio web a distancia</title>
+  <link rel="stylesheet" href="./css/footer-nav.css" />
+  <link rel="stylesheet" href="./css/vertodos.css" />
+</head>
+<body>
+
+  <!-- 🔙 Flecha volver -->
+  <a href="arma.html" class="back-arrow">←</a>
+
+  <main class="main-content">
+    <h1 class="page-title">Todos los productos</h1>
+
+    <!-- 🧭 Filtros por categoría -->
+    <div class="category-filters">
+      <button class="filter-btn active" data-category="all">Todos</button>
+      <button class="filter-btn" data-category="landing">Landing Page</button>
+      <button class="filter-btn" data-category="multi">Multipágina</button>
+      <button class="filter-btn" data-category="ecommerce">E-commerce Lite</button>
+      <button class="filter-btn" data-category="fondos">Fondos Interactivos</button>
+    </div>
+
+    <!-- 🛍️ Grid de productos -->
+    <section id="products-grid" class="products-grid"></section>
+  </main>
+
+  <!-- 🔗 Barra inferior -->
+  <script src="./js/footer-nav.js"></script>
+  <script src="./js/cart.js"></script>
+  <script src="./js/vertodos.js"></script>
+
+</body>
+</html>
