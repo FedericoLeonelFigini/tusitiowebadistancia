@@ -1,61 +1,58 @@
+// --- marco.js ---
+// Usa la API pública del carrito global (definida en cart.js)
+
 document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.getElementById("addCartBtn");
   const toggleBtn = document.getElementById("toggleFeatures");
   const panel = document.getElementById("featuresPanel");
   const productVideo = document.getElementById("productVideo");
 
-  // Estado inicial del panel (cerrado)
-  panel.style.maxHeight = "0px";
-  panel.setAttribute("aria-hidden", "true");
-  toggleBtn.setAttribute("aria-expanded", "false");
+  // 🛒 Agregar producto al carrito global
+  if (addBtn) {
+    addBtn.addEventListener("click", () => {
+      const product = {
+        id: "producto-lite",
+        title: document.querySelector(".product-title")?.textContent || "E-Commerce Lite",
+        price: 89999,
+        img: "../imagenes/ecommerce-lite.jpg",
+        qty: 1
+      };
 
-  // 🛒 Agregar al carrito
-  addBtn.addEventListener("click", () => {
-    const product = {
-      id: "producto-lite",
-      title: document.querySelector(".product-title").textContent,
-      price: 89999,
-      qty: 1
-    };
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    cart.push(product);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Producto agregado al carrito ✅");
-  });
+      // Usa la función global addToCart() de cart.js
+      if (typeof window.addToCart === "function") {
+        window.addToCart(product);
+      } else {
+        // En caso de que cart.js aún no esté cargado
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
 
-  // ⚙️ Mostrar/Ocultar características (con altura real)
-  toggleBtn.addEventListener("click", () => {
-    const isOpen = panel.getAttribute("aria-hidden") === "false";
-    if (isOpen) {
-      // Cerrar
-      panel.style.maxHeight = "0px";
-      panel.classList.remove("open");
-      panel.setAttribute("aria-hidden", "true");
-      toggleBtn.setAttribute("aria-expanded", "false");
-      toggleBtn.textContent = "Ver características ▾";
-    } else {
-      // Abrir con la altura del contenido
-      panel.style.maxHeight = panel.scrollHeight + "px";
-      panel.classList.add("open");
-      panel.setAttribute("aria-hidden", "false");
-      toggleBtn.setAttribute("aria-expanded", "true");
-      toggleBtn.textContent = "Ocultar características ▲";
-    }
-  });
+      // Efecto visual corto para confirmar agregado
+      addBtn.textContent = "✅ Agregado";
+      addBtn.style.background = "#4CAF50";
+      setTimeout(() => {
+        addBtn.textContent = "Agregar al carrito";
+        addBtn.style.background = "#00bfff";
+      }, 1000);
+    });
+  }
 
-  // Recalcular altura si está abierto y cambia el tamaño de pantalla
-  window.addEventListener("resize", () => {
-    if (panel.getAttribute("aria-hidden") === "false") {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  });
+  // ⚙️ Mostrar/Ocultar características
+  if (toggleBtn && panel) {
+    toggleBtn.addEventListener("click", () => {
+      panel.classList.toggle("active");
+      toggleBtn.textContent = panel.classList.contains("active")
+        ? "Ocultar características ▲"
+        : "Ver características ▾";
+    });
+  }
 
-  // 🎬 Reproducir video con sonido automáticamente (si el navegador lo permite)
+  // 🎬 Reproducir video automáticamente (con sonido)
   if (productVideo) {
     productVideo.volume = 1.0;
     productVideo.play().catch(() => {
-      // Algunos navegadores bloquean autoplay con sonido
-      console.warn("Autoplay con sonido bloqueado por el navegador.");
+      console.warn("El navegador bloqueó la reproducción automática con sonido.");
     });
   }
 });
