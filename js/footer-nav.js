@@ -7,8 +7,8 @@
       <a href="./index.html" aria-label="Home" data-nav="home">
         ${iconHome()}<span>Home</span>
       </a>
-      <a href="./arma.html" aria-label="Tienda" data-nav="tienda">
-        ${iconCode()}<span>Tienda</span>
+      <a href="./arma.html" aria-label="Proyectos" data-nav="Proyectos">
+        ${iconCode()}<span>Proyectos</span>
       </a>
       <a href="./paquetes.html" aria-label="Paquetes mayoristas" data-nav="paquetes">
         ${iconBox()}<span>Paquetes</span>
