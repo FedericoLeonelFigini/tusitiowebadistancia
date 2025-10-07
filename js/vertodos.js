@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = btn.closest(".product-card");
         const prod = productos.find(p => p.id === card.dataset.id);
         addToCart({ id: prod.id, title: prod.title, price: prod.price, qty: 1 });
-        alert(`${prod.title} agregado al carrito ✅`);
       });
     });
 
